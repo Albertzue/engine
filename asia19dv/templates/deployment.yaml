@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      type: {{ .Values.deploy.podName}}
+  template:
+    metadata:
+      labels:
+        type:  {{ .Values.deploy.podName}}
+    spec:
+      {{- if eq .Values.nodeType "windows" }}
+      {{ template "windows nodeSelector". }}
+      {{- else }}
+      {{ template "linux nodeSelector" }}
+      {{- end }}
+      containers:
+      - name: {{ .Values.image.name }}
+        image: {{ .Values.image.repository }}
+        resources:
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+

@@ -1,0 +1,26 @@
+# Default values for eks.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+nodeType: windows
+replicaCount: 1
+
+deploy:
+  podName: worker19dv
+
+image:
+  repository: 933919336272.dkr.ecr.us-east-2.amazonaws.com/ekstest
+  name: workercontainer
+
+
+resources: 
+  limits:
+    cpu: 1
+  requests:
+    cpu: 1
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
