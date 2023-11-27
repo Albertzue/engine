@@ -9,7 +9,7 @@ deploy:
   podName: worker19dv
 
 image:
-  repository: nginx:latest
+  repository: nginx:v2
   name: workercontainer
 
 autoscaling:
