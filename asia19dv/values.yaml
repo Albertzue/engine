@@ -12,13 +12,6 @@ image:
   repository: nginx:latest
   name: workercontainer
 
-
-resources: 
-  limits:
-    cpu: 1
-  requests:
-    cpu: 1
-
 autoscaling:
   enabled: false
   minReplicas: 1
