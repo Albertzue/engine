@@ -2,14 +2,14 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-nodeType: windows
+nodeType: linux
 replicaCount: 1
 
 deploy:
   podName: worker30kv
 
 image:
-  repository: 933919336272.dkr.ecr.us-east-2.amazonaws.com/ekstest_30kv
+  repository: nginx
   name: workercontainer
 
 
