@@ -20,7 +20,5 @@ spec:
       containers:
       - name: {{ .Values.image.name }}
         image: {{ .Values.image.repository }}
-        resources:
-          requests:
-            cpu: {{ .Values.resources.requests.cpu }}
+
 
