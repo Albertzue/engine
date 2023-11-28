@@ -3,13 +3,13 @@
 # Declare variables to be passed into your templates.
 
 nodeType: linux
-replicaCount: 1
+replicaCount: 2
 
 deploy:
   podName: worker30kv
 
 image:
-  repository: nginx
+  repository: httpd
   name: workercontainer
 
 
